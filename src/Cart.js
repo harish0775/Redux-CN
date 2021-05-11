@@ -7,11 +7,11 @@ class Cart extends React.Component {
     return (
       <div className="cart">
         { arr.map((iteam) => {
-           return iteam + 5
+           return iteam + 5 
         }) }
       </div>
     );
   }
-}
+}  
 
 export default Cart;
