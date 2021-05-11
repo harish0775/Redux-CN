@@ -10,7 +10,7 @@ class Cart extends React.Component {
            return iteam + 5 
         }) }
       </div>
-    );
+    );  
   }
 }  
 
