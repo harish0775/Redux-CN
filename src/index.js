@@ -1,6 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import {createStore} from 'redux';
 import './index.css';
-import App from './App';
+import App from './components/App';
+import movies from './reducers';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const store = createStore(movies);
+console.log('store',store);
+ReactDOM.render(<App />, document.getElementById("root"));
