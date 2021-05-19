@@ -1,33 +1,42 @@
-//action types
-export const ADD_MOVIES = "ADD_MOVIES";
-export const ADD_FAVOURITE = "ADD_FAVOURITE";
-export const REMOVE_FROM_FAV = "REMOVE_FROM_FAV";
-export const SHOW_FAV = "SHOW_FAV";
-//action creators
+// action types
+export const ADD_MOVIES = 'ADD_MOVIES';
+export const ADD_TO_FAVOURITES = 'ADD_TO_FAVOURITES';
+export const REMOVE_FROM_FAVOURITES = 'REMOVE_FROM_FAVOURITES';
+export const SET_SHOW_FAVOURITES = 'SET_SHOW_FAVOURITES';
+export const ADD_MOVIE_TO_LIST = 'ADD_MOVIE_TO_LIST';
+
+// action creators
 export function addMovies(movies) {
   return {
     type: ADD_MOVIES,
-    movies: movies,
+    movies
   };
 }
 
-export function addFavourite(movie) {
+export function addToFavourites(movie) {
   return {
-    type: ADD_FAVOURITE,
-    movie: movie,
+    type: ADD_TO_FAVOURITES,
+    movie
   };
 }
 
-export function removeFromFav(movie) {
+export function setShowFavourites(val) {
   return {
-    type: REMOVE_FROM_FAV,
-    movie: movie,
+    type: SET_SHOW_FAVOURITES,
+    val
   };
 }
 
-export function setShowFav(val) {
+export function removeFromFavourites(movie) {
   return {
-    type: SHOW_FAV,
-    val,
+    type: REMOVE_FROM_FAVOURITES,
+    movie
+  };
+}
+
+export function addMovieToList(movie) {
+  return {
+    type: ADD_MOVIE_TO_LIST,
+    movie
   };
 }

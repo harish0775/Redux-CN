@@ -1,28 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { createStore , applyMiddleware} from "redux";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
 
-import App from "./components/App";
-import "./index.css";
-import rootReducer from "./reducers";
+import App from './components/App';
+import rootReducer from './reducers';
+import { data as moviesList } from './data';
+import './index.css';
 
-//function logger(obj,next,action)
-// logger(obj)(next)(action)
-// const logger = function({dispatch,getState}){
-//    return function(next){
-//        return function(action){
-//            //middleware code
-//            console.log('ACTION_TYPE = ',action.type);
-//            next(action);
-//        }
-//    }
-// }
-const logger = ({dispatch , getState}) => (next) => (action) =>{
-      //loger code
-    console.log('ACTION_TYPE = ', action.type);  
-}
+const store = createStore(rootReducer);
+// console.log(store);
+console.log('state', store.getState());
 
-const store = createStore(rootReducer, applyMiddleware());
-console.log('store', store);
+// update store by dispatching actions
+// store.dispatch({
+//   type: 'ADD_MOVIES',
+//   movies: moviesList
+// });
+// console.log('state', store.getState());
 
-ReactDOM.render(<App store={store} />, document.getElementById("root"));
+ReactDOM.render(<App store={store} />, document.getElementById('root'));
