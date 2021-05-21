@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';                                                                                     
+import thunk from 'redux-thunk';
 
 import App from './components/App';
 import rootReducer from './reducers';
 import './index.css';
+
 // const logger = function({ dispatch, getState }) {
 //   return function(next) {
 //     return function(action) {
@@ -15,14 +16,12 @@ import './index.css';
 //     };
 //   };
 // };
+
 const logger = ({ dispatch, getState }) => next => action => {
   // my middlware
-  if(typeof action != 'function'){
-    console.log('ACTION_TYPE', action);
-  }
-  
+  console.log('ACTION', action);
   next(action);
-};      
+};
 
 // const thunk = store => next => action => {
 //   if (typeof action === 'function') {

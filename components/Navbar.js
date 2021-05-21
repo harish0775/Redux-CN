@@ -1,35 +1,39 @@
-import React, { Component } from 'react';
-import { addMovieToList, handleMovieSearch } from '../actions';
-import { data } from '../data';
 
-class Navbar extends Component {
+import React,{Component} from 'react';
+
+import { handleMovieSearch, addMovieToList } from "../actions";
+
+class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showSearchResults: true,
-      searchText: ''
+      searchText: '',
     };
   }
-  handleAddToMovies = movie => {
+  handleAddToMovies = (movie) => {
     this.props.dispatch(addMovieToList(movie));
-    this.setState({
-      showSearchResults: false
-    });
   };
 
   handleSearchClick = () => {
     const { searchText } = this.state;
     this.props.dispatch(handleMovieSearch(searchText));
   };
-
-  handleSearchChange = e => {
+  handleChange = (e) => {
     this.setState({
-      searchText: e.target.value
+      searchText: e.target.value,
+    });
+    // if (this.state.searchText !== "") {
+    //   const { searchText } = this.state;
+    //   this.props.dispatch(handleMovieSearch(searchText));
+    // }
+  };
+  handleSearchChange = (e) => {
+    this.setState({
+      searchText: e.target.value,
     });
   };
-
-  render() {
-    const { showSearchResults } = this.state;
+render() {
+    const { results: movie ,showSearchResults } = this.props.search;
     return (
       <div className="nav">
         <div className="search-container">
@@ -41,10 +45,10 @@ class Navbar extends Component {
           {showSearchResults && (
             <div className="search-results">
               <div className="search-result">
-                <img src={data[0].Poster} alt="search-pic" />
+                <img src={movie.Poster} alt="search-pic" />
                 <div className="movie-info">
-                  <span>{data[0].Title}</span>
-                  <button onClick={() => this.handleAddToMovies(data[0])}>
+                  <span>{movie.Title}</span>
+                  <button onClick={() => this.handleAddToMovies(movie)}>
                     Add to Movies
                   </button>
                 </div>
