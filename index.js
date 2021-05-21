@@ -1,30 +1,46 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { createStore , applyMiddleware} from "redux";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';                                                                                     
 
-import App from "./components/App";
-import "./index.css";
-import rootReducer from "./reducers";
+import App from './components/App';
+import rootReducer from './reducers';
+import './index.css';
+// const logger = function({ dispatch, getState }) {
+//   return function(next) {
+//     return function(action) {
+//       // my middlware
+//       console.log('ACTION', action);
+//       next(action);
+//     };
+//   };
+// };
+const logger = ({ dispatch, getState }) => next => action => {
+  // my middlware
+  if(typeof action != 'function'){
+    console.log('ACTION_TYPE', action);
+  }
+  
+  next(action);
+};      
 
-//function logger(obj,next,action)
+// const thunk = store => next => action => {
+//   if (typeof action === 'function') {
+//     return action(store.dispatch);
+//   }
 
-// logger(obj)(next)(action)
-// const logger = function({dispatch,getState}){
-//    return function(next){
-//        return function(action){
-//            //middleware code
-//            console.log('ACTION_TYPE = ',action.type);
-//            next(action);
-//        }
-//    }
-// }
-const logger = ({dispatch , getState}) => (next) => (action) =>{
-      //loger code
-    console.log('ACTION_TYPE = ', action.type); 
-    next(action);
-}
+//   next(action);
+// };
 
-const store = createStore(rootReducer, applyMiddleware(logger));
-console.log('store', store);
+const store = createStore(rootReducer, applyMiddleware(logger, thunk));
+// console.log(store);
+console.log('state', store.getState());
 
-ReactDOM.render(<App store={store} />, document.getElementById("root"));
+// update store by dispatching actions
+// store.dispatch({
+//   type: 'ADD_MOVIES',
+//   movies: moviesList
+// });
+// console.log('state', store.getState());
+
+ReactDOM.render(<App store={store} />, document.getElementById('root'));

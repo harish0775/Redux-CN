@@ -40,3 +40,21 @@ export function addMovieToList(movie) {
     movie
   };
 }
+
+export function handleMovieSearch(searchText) {
+  return function(dispatch) {
+    const url = 'http://www.omdbapi.com/?apikey=3ca5df7&t=superman';
+    fetch(url)
+      .then(response => response.json())
+      .then(movie => {
+        console.log('movie', movie);
+        // dispatch action to save search results in store
+      });
+  };
+}
+
+// export const addMovieSearchResult(movie){
+//   return{
+//     type : 'ADD_'
+//   }
+// }
