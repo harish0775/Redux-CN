@@ -1,9 +1,9 @@
+import React, { Component } from 'react';
+import { addMovieToList, handleMovieSearch } from '../actions';
+import { data } from '../data';
+import { StoreContext } from '..';
 
-import React,{Component} from 'react';
-
-import { handleMovieSearch, addMovieToList } from "../actions";
-
-class Navbar extends React.Component {
+class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,22 +18,15 @@ class Navbar extends React.Component {
     const { searchText } = this.state;
     this.props.dispatch(handleMovieSearch(searchText));
   };
-  handleChange = (e) => {
-    this.setState({
-      searchText: e.target.value,
-    });
-    // if (this.state.searchText !== "") {
-    //   const { searchText } = this.state;
-    //   this.props.dispatch(handleMovieSearch(searchText));
-    // }
-  };
+
   handleSearchChange = (e) => {
     this.setState({
       searchText: e.target.value,
     });
   };
-render() {
-    const { results: movie ,showSearchResults } = this.props.search;
+
+  render() {
+    const { showSearchResults, results: movie } = this.props.search;
     return (
       <div className="nav">
         <div className="search-container">
@@ -61,4 +54,16 @@ render() {
   }
 }
 
-export default Navbar;
+// class NavbarWrapper extends React.Component {
+//   render() {
+//     return (
+//       <StoreContext.Consumer>
+//         {(store) => (
+//           <Navbar dispatch={store.dispatch} search={this.props.search} />
+//         )}
+//       </StoreContext.Consumer>
+//     );
+//   }
+// }
+
+export default NavbarWrapper;

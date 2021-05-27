@@ -33,13 +33,13 @@ const logger = ({ dispatch, getState }) => next => action => {
 
 const store = createStore(rootReducer, applyMiddleware(logger, thunk));
 // console.log(store);
-console.log('state', store.getState()); 
+console.log('state', store.getState());
 
-// update store by dispatching actions 
+// update store by dispatching actions
 // store.dispatch({
 //   type: 'ADD_MOVIES',
 //   movies: moviesList
 // });
 // console.log('state', store.getState());
 
-ReactDOM.render(<App store={store} />, document.getElementById('root'));  
+ReactDOM.render(<App store={store} />, document.getElementById('root'));
