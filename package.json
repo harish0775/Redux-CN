@@ -9,6 +9,7 @@
     "nodemon": "^2.0.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-global-context-store": "^1.1.0",
     "react-scripts": "3.4.0",
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0"
