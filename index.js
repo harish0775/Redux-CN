@@ -42,4 +42,8 @@ console.log('state', store.getState());
 // });
 // console.log('state', store.getState());
 
-ReactDOM.render(<App store={store} />, document.getElementById('root'));          
+ReactDOM.render(<App store={store} />, document.getElementById('root'));           
+git add .
+git commit -m"add file"
+
+ 
