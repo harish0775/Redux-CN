@@ -22,7 +22,7 @@ const logger = ({ dispatch, getState }) => next => action => {
   console.log('ACTION', action);
   next(action);
 };
-
+ 
 // const thunk = store => next => action => {
 //   if (typeof action === 'function') {
 //     return action(store.dispatch);
@@ -46,7 +46,7 @@ ReactDOM.render(<App store={store} />, document.getElementById('root'));
 // git add .  
 // git commit -m"add file"  
 
-      
+       
      
                  
  
