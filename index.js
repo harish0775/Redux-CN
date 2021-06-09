@@ -30,7 +30,7 @@ const logger = ({ dispatch, getState }) => next => action => {
 
 //   next(action);
 // };
-
+ 
 const store = createStore(rootReducer, applyMiddleware(logger, thunk));
 // console.log(store);
 console.log('state', store.getState());
