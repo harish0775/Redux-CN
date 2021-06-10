@@ -22,7 +22,7 @@ const logger = ({ dispatch, getState }) => next => action => {
   console.log('ACTION', action);
   next(action);
 };
-
+ 
 // const thunk = store => next => action => {
 //   if (typeof action === 'function') {
 //     return action(store.dispatch);
@@ -30,7 +30,7 @@ const logger = ({ dispatch, getState }) => next => action => {
 
 //   next(action);
 // };
-
+ 
 const store = createStore(rootReducer, applyMiddleware(logger, thunk));
 // console.log(store);
 console.log('state', store.getState());
@@ -46,7 +46,9 @@ ReactDOM.render(<App store={store} />, document.getElementById('root'));
 // git add .  
 // git commit -m"add file"  
 
-      
+       
      
                  
+          
+
  
