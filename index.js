@@ -39,9 +39,9 @@ console.log('state', store.getState());
 // store.dispatch({
 //   type: 'ADD_MOVIES',
 //   movies: moviesList
-// });
+// });   
 // console.log('state', store.getState());
-
+   
 ReactDOM.render(<App store={store} />, document.getElementById('root'));           
 // git add .  
 // git commit -m"add file"  
