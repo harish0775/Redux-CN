@@ -84,17 +84,17 @@ export function search(state = initialSearchState, action) {
   }
 }
 
-// const initialRootState = {
-//   movies: initialMoviesState,
-//   search: []
-// };
+const initialRootState = {
+  movies: initialMoviesState,
+  search: []
+};
 
-// export default function rootReducer(state = initialRootState, action) {
-//   return {
-//     movies: movies(state.movies, action),
-//     search: search(state.search, action)
-//   };
-// }
+export default function rootReducer(state = initialRootState, action) {
+  return {
+    movies: movies(state.movies, action),
+    search: search(state.search, action)
+  };
+}
 
 export default combineReducers({
   movies,

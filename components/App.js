@@ -37,7 +37,7 @@ class App extends React.Component {
         <div className="main">
           <div className="tabs">
             <div
-              className={`tab ${showFavourites ? '' : 'active-tabs'}`}
+              className={`tab ${showFavourites ? '' : 'active-tabs'}`}  
               onClick={() => this.changeTab(false)}
             >
               Movies
