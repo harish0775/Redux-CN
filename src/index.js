@@ -37,15 +37,15 @@ console.log('state', store.getState());
 
 // update store by dispatching actions
 // store.dispatch({
-//   type: 'ADD_MOVIES',
+//   type: 'ADD_MOVIES', 
 //   movies: moviesList//git merge origin master
 
 // });   
 // console.log('state', store.getState()); 
-   
-ReactDOM.render(<App store={store} />, document.getElementById('root'));           
-// git add .  
-// git commit -m"add file"  
+        
+ReactDOM.render(<App store={store} />, document.getElementById('root'));             
+// git add .    
+// git commit -m"add file"     
 
        
       
