@@ -37,7 +37,7 @@ console.log('state', store.getState());
 
 // update store by dispatching actions
 // store.dispatch({
-//   type: 'ADD_MOVIES', 
+//   type: 'ADD_MOVIES',    
 //   movies: moviesList//git merge origin master
 
 // });   
