@@ -13,8 +13,8 @@ import './index.css';
 //       // my middlware
 //       console.log('ACTION', action);
 //       next(action);  
-//     };    
-// }; 
+//     };       
+// };   
 
 const logger = ({ dispatch, getState }) => next => action => {
   // my middlware
