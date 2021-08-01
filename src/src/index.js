@@ -15,7 +15,7 @@ import './index.css';
 //       next(action);
 //     };
 //   };
-// };
+// }; 
 
 const logger = ({ dispatch, getState }) => next => action => {
   // my middlware
