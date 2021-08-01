@@ -12,7 +12,7 @@ import './index.css';
 //     return function(action) {
 //       // my middlware
 //       console.log('ACTION', action);
-//       next(action);
+//       next(action);  
 //     };
 //   };
 // }; 
