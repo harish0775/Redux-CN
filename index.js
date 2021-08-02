@@ -41,7 +41,7 @@ console.log('state', store.getState());
 //   movies: moviesList//git merge origin master
   
 // });         
-// console.log('state', store.getState()); 
+// console.log('state', store.getState());     
         
 ReactDOM.render(<App store={store} />, document.getElementById('root'));             
 // git add .    
